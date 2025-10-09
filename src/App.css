@@ -1,0 +1,19 @@
+.container {
+    padding-top: 40px;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    height: 100px;
+    color: var(--app-blue);
+    background-color: var(--app-blue-very-dark);
+    font-weight: 400;
+}
+
+iframe {
+    margin: 0;
+    margin-bottom: -3px; /* frame is adding extra margin */
+}

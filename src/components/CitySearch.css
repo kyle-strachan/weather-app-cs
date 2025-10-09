@@ -1,0 +1,52 @@
+.city-search-full-width {
+    background-color: var(--app-dark-blue);
+}
+
+.city-search-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 5px;
+    background-color: var(--app-blue-dark);
+}
+
+#city-name {
+    height: 50px;
+    width: 100%;
+}
+
+.city-search-form {
+    display: flex;
+    gap: 5px;
+}
+
+.city-search-form > input {
+    padding: 0 10px;
+    border: none;
+}
+
+.city-tile {
+    width: 100%;
+    background-color: rgb(247, 247, 247);
+    text-align: left;
+    padding: 10px 15px;
+    border: none;
+}
+
+.city-tile:hover {
+    background-color: #eaaa00;
+}
+
+.city-tile-name {
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.city-tile-coords {
+    font-weight: 400;
+    color: rgb(82, 82, 82)
+}
+
+.city-search-messages {
+    color: white;
+}

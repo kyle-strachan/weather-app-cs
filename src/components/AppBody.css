@@ -1,0 +1,140 @@
+button:hover {
+  background-color: var(--app-blue);
+  border-color: rgb(186, 190, 134);
+}
+
+.weather-results-tabs {
+  overflow: auto;
+  white-space: nowrap;
+  width: 100%;
+  display: flex;
+  align-items: end;
+}
+
+.weather-results-tab {
+  display: inline-block;
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  height: 55px;
+  border: 1px solid lightgray;
+  border-left: none;
+  border-bottom: 3px solid var(--app-blue-dark)
+}
+
+.weather-results-tab:hover {
+  background-color: #ffefc5;
+  border-bottom: 3px solid var(--app-blue-very-dark)
+}
+
+.tab-active {
+    height: 100px;
+    background-color: white;
+    border-bottom: 6px solid #eaaa00;
+}
+
+.tab-active:hover {
+    border-bottom: 6px solid #eaaa00;
+}
+
+.tab-active:focus {
+    background-color: white;
+    border-bottom: 6px solid #eaaa00;
+}
+
+.weather-current-container {
+    background: no-repeat center center;
+    background-size: cover;
+    padding: 0 10px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.weather-current {
+    border-left: 3px solid var(--app-blue);
+    background-color: rgba(255, 255, 255, 0.829);
+    max-width: 400px;
+    margin: 0 20px 120px 20px;
+    padding: 5px 20px;
+}
+
+.weather-current-top-row {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: end; */
+}
+
+.weather-current-location {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+}
+
+.weather-current-icon {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    /* background-color: pink; */
+}
+
+.weather-forecast {
+    margin-top: -100px;
+}
+
+.background-clouds {
+    background-image: url("/images/clouds.webp");
+}
+.background-rain {
+    background-image: url("/images/rain.webp");
+}
+.background-drizzle {
+    background-image: url("/images/drizzle.webp");
+}
+.background-clear {
+    background-image: url("/images/clear.webp");
+}
+.background-snow {
+    background-image: url("/images/snow.webp");
+}
+.background-thunderstorm {
+    background-image: url("/images/thunderstorm.webp");
+}
+.background-other {
+    background-image: url("/images/other.webp");
+}
+
+/* TABLE */
+.weather-table {
+    /* background-color: pink; */
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+th {
+    vertical-align: middle;
+    height: 40px;
+    background-color: rgb(230, 240, 243);
+}
+
+th > p {
+    margin: 0px;
+}
+
+.weather-table td, tr {
+    border: none;
+    border-bottom: 1px solid #add8e6;
+    padding: 2px 5px;
+    height: 60px;
+}
+
+.weather-table th:nth-child(1),
+.weather-table td:nth-child(1) {
+  width: 30%;
+}
+
