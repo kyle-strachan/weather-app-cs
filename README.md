@@ -27,5 +27,6 @@ npm start
 ### Development notes
 1. The API data is reprocessed in `utils/groupDates.js`: first, it converts timestamps to Unix time and applies the timezone offset to produce human-readable dates; second, it groups the entries by date to allow displaying them in tabbed sections. Once this was solved, the tab and table layout became straightforward.
 2. While the API has a parameter to fetch for metric vs imperial, I chose to convert this locally to prevent a second fetch.
+3. Location defaults to Linlithgow, Scotland (my hometown).
 
 
