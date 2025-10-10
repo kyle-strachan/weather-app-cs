@@ -21,7 +21,7 @@ export default function WeatherForecastTable({ error, loading, groupedData, hand
                 ))}
             </div>
 
-            {/* Fourecast output as table */}
+            {/* Forecast output as table */}
             {groupedData && groupedData.map((day) => (
                 <div key={day.date} id={day.date} className="day-tab" style={{ display: day.date === activeDay ? "block" : "none" }}>
                     <table className="weather-table">

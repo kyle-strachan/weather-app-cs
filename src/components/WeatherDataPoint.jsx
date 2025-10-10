@@ -30,14 +30,14 @@ function WeatherDataPoint({
         <tr>
             <td>{weatherClock}</td>
             <td>
-                <img src={`./icons/${weatherIcon}.png`} alt="" width={30} height={30} />
+                <img src={`/icons/${weatherIcon}.png`} alt="" width={30} height={30} />
             </td>
             <td>{tempLabel}</td>
             <td>{weatherHumidity}</td>
             <td style={{ position: "relative", textAlign: "center", zIndex: 0 }}>
                 <div
                     style={{
-                        backgroundImage: `url(./icons/wind-direction-icon-2.png)`,
+                        backgroundImage: `url(/icons/wind-direction-icon-2.png)`,
                         backgroundRepeat: "no-repeat",
                         backgroundPosition: "center",
                         backgroundSize: "contain",
@@ -45,10 +45,10 @@ function WeatherDataPoint({
                         width: "50px",
                         height: "50px",
                         margin: "0 auto",
-                        zIndex: "0"
+                        zIndex: 1
                     }}
                 ></div>
-                <span style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", zIndex: -1, }}>
+                <span style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", zIndex: 0 }}>
                     {speedLabel}
                 </span>
             </td>

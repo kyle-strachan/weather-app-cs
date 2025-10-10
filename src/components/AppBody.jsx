@@ -19,35 +19,21 @@ export default function AppBody() {
         if (forecast && forecast.city) {
             const grouped = groupDates(forecast, forecast.city.timezone ?? 0) // To create the tab layout, the data is grouped into an array by date
             setGroupedData(grouped);
-            setActiveTab(0); // Reset to tab one with new location
-            if (grouped.length > 0) {
+            setActiveTab(0); // Reset to first tab on location change
+            if (grouped.length > 0 && grouped[0].entries.length > 0) {
                 setActiveDay(grouped[0].date);
                 const backgroundWeather = grouped[0].entries[0].background;
 
                 // Set dynamic background based on current weather (first record)
-                switch (backgroundWeather) {
-                    case "Clear":
-                        setWeatherBackground("background-clear");
-                        break;
-                    case "Clouds":
-                        setWeatherBackground("background-clouds");
-                        break;
-                    case "Snow":
-                        setWeatherBackground("background-snow");
-                        break;
-                    case "Rain":
-                        setWeatherBackground("background-rain");
-                        break;
-                    case "Drizzle":
-                        setWeatherBackground("background-drizzle");
-                        break;
-                    case "Thunderstorm":
-                        setWeatherBackground("background-thunderstorm");
-                        break;
-                    default:
-                        setWeatherBackground("background-other");
-                        break;
-                }
+                const backgroundMap = {
+                    Clear: "background-clear",
+                    Clouds: "background-clouds",
+                    Snow: "background-snow",
+                    Rain: "background-rain",
+                    Drizzle: "background-drizzle",
+                    Thunderstorm: "background-thunderstorm",
+                };
+                setWeatherBackground(backgroundMap[backgroundWeather] || "background-other");
             }
         }
     }, [forecast]);

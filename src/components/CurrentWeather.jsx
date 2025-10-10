@@ -13,7 +13,11 @@ export default function CurrentWeather({ weatherBackground, groupedData }) {
                             {selectedCity.state ? `, ${selectedCity.state}` : ""}, {selectedCity.country}
                         </h2>
                     </div>
-                    <div className="weather-current-icon"><div>{groupedData && <img src={"./icons/" + groupedData[0].entries[0].icon + ".png"} alt="" width="100px" height="100px" />}</div></div>
+                    <div className="weather-current-icon">
+                        <div>
+                            {groupedData && <img src={"/icons/" + groupedData[0].entries[0].icon + ".png"} alt="" width="100px" height="100px" />}
+                        </div>
+                    </div>
                 </div>
                 {groupedData && groupedData[0]?.entries[0]?.temp && (
                     <>

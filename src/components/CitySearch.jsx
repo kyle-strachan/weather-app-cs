@@ -5,7 +5,7 @@ import { useTheme } from "../context/AppContext.jsx";
 import './CitySearch.css';
 
 function CitySearch() {
-  const [formData, setFormData] = useState({ cityName: "" });
+  const [cityNameInput, setCityNameInput] = useState("");
   const [cityName, setCityName] = useState("");
   const [hasSearched, setHasSearched] = useState(false);
   const [errors, setErrors] = useState({});
@@ -15,7 +15,7 @@ function CitySearch() {
     hasSearched && cityName
       ? `https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(
         cityName
-      )}&limit=10&appid=${import.meta.env.VITE_OPEN_WEATHER_KEY}`
+      )}&limit=5&appid=${import.meta.env.VITE_OPEN_WEATHER_KEY}`
       : null;
 
   const { data: dataSearch, loading: loadingSearch, error: errorSearch } =
@@ -23,7 +23,7 @@ function CitySearch() {
 
   useEffect(() => {
     if (loadingSearch || errorSearch) {
-      // Hide result tiles if loading/new search or error occurs
+      // Hide result tiles if loading, during new search, or error occurs
       setDisplayResults(false);
       return;
     }
@@ -35,15 +35,10 @@ function CitySearch() {
     setDisplayResults(Array.isArray(dataSearch) && dataSearch.length > 0);
   }, [dataSearch, loadingSearch, errorSearch]);
 
-  const handleChange = (e) => {
-    // Keep latest search in variable
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
   function handleSubmit(e) {
     // Use latest handleChange value to search for city
     e.preventDefault();
-    const name = (formData.cityName).trim();
+    const name = cityNameInput.trim();
     if (!name) {
       setErrors({ cityName: "Enter a city name" });
       return;
@@ -60,11 +55,11 @@ function CitySearch() {
           id="city-name"
           name="cityName"
           type="text"
-          value={formData.cityName ?? ""}
-          onChange={handleChange}
+          value={cityNameInput}
+          onChange={(e) => setCityNameInput(e.target.value)}
           placeholder="Search for a city"
         />
-        <button id="nav-control-search" type="submit" className="nav-control"><img src="./icons/icon-search.png" height="40px" width="40px" /></button>
+        <button id="nav-control-search" type="submit" className="nav-control"><img src="/icons/icon-search.png" height="40px" width="40px" /></button>
       </form>
 
       <div className="city-search-messages">

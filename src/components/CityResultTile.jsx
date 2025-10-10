@@ -7,13 +7,15 @@ function CityResultTile({ name, state, country, lat, lon, onSelect }) {
     onSelect?.({ name, state, country, lat, lon });
   }
 
-  return (
+  function roundLonLat(coord) {
+    return Number.parseFloat(coord).toFixed(4);
+  }
 
+  return (
     <button type="button" className="city-tile" onClick={citySelected}>
       <div className="city-tile-name">{name}{state ? `, ${state}` : ""}, {country}</div>
-      <div className="city-tile-coords">lat: {lat}, lon: {lon}</div>
+      <div className="city-tile-coords">lat: {roundLonLat(lat)}, lon: {roundLonLat(lon)}</div>
     </button>
-
   );
 }
 

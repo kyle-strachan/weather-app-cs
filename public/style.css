@@ -13,6 +13,13 @@
     box-sizing: inherit;
 }
 
+/* Introduced to stop vertical scroll bar creating small horizontal scroll */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+} 
+
 body {
   background-color: rgb(241, 240, 240);
 }
@@ -26,4 +33,24 @@ body {
   /* box-shadow: 
     -8px 0 15px -8px rgba(0, 0, 0, 0.15),
      8px 0 15px -8px rgba(0, 0, 0, 0.15); */
+}
+
+.container {
+    padding-top: 40px;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    height: 100px;
+    color: var(--app-blue);
+    background-color: var(--app-blue-very-dark);
+    font-weight: 400;
+}
+
+iframe {
+    margin: 0;
+    margin-bottom: -4px; /* frame is adding extra margin */
 }

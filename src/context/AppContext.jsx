@@ -41,7 +41,7 @@ export const AppProvider = ({ children }) => {
 
 
     return (
-        <AppContext.Provider value={{ unit, toggleUnit, showSearch, toggleSearch, location, selectedCity, setSelectedCity, setShowSearch }}>
+        <AppContext.Provider value={{ unit, toggleUnit, showSearch, toggleSearch, selectedCity, setSelectedCity, setShowSearch }}>
             {children}
         </AppContext.Provider>
     );
