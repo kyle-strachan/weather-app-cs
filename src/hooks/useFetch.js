@@ -15,7 +15,7 @@ function useFetch(url) {
     const fetchData = async () => {
       try {
         setLoading(true);
-        // await new Promise((r) => setTimeout(r, 1000));
+        // await new Promise((r) => setTimeout(r, 1000)); // Used for testing loading screen. Kept in code if you want to test
         const res = await fetch(url);
         if (!res.ok)
           throw new Error(

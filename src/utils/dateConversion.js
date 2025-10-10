@@ -1,8 +1,10 @@
 export function dateToDddD(dateAsIso) {
+  // For tab display: returns "Saturday 31"
+
   const [year, month, day] = dateAsIso.split("-");
-  const d = new Date(Number(year), Number(month) - 1, Number(day)); // local midnight
-  return new Intl.DateTimeFormat("en-GB", {
+  const date = new Date(Number(year), Number(month) - 1, Number(day)); // local midnight (no time component) and adjusted month for JavaScript
+  return new Intl.DateTimeFormat("en-CA", {
     weekday: "long",
     day: "numeric",
-  }).format(d);
+  }).format(date);
 }

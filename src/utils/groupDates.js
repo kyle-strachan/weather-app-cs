@@ -19,7 +19,7 @@ export function groupDates(forecast, offsetSeconds) {
       timeZone: "UTC",
     });
 
-    // Select values that will be used in ForecastTable
+    // Select values that will be used in WeatherForecastTable
     const entry = {
       time,
       temp: item.main.temp,
