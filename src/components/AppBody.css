@@ -130,6 +130,10 @@ th > p {
     height: 60px;
 }
 
+.weather-table tr:hover {
+    background-color: #f3fcff;
+}
+
 .weather-table th:nth-child(1),
 .weather-table td:nth-child(1) {
   width: 30%;
