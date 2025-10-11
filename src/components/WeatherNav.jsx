@@ -20,7 +20,7 @@ export default function WeatherNav() {
         <div className="nav">
             <div className="nav-flex">
                 <div className="nav-brand">
-                    <div className="nav-logo">Blown</div>
+                    <div className="nav-logo">Currents</div>
                     <div className="logo"><img src="/brand/wind-icon-white-100-transparent.png" alt="Wind Logo" height="35px" width="35px" /></div>
                 </div>
                 <div className="nav-controls">
