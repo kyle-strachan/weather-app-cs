@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useDebounce } from "use-debounce";
 import useFetch from "../hooks/useFetch";
 import CityResultTile from "./CityResultTile.jsx";
 import { useTheme } from "../context/AppContext.jsx";
@@ -11,6 +12,7 @@ function CitySearch() {
   const [errors, setErrors] = useState({});
   const [displayResults, setDisplayResults] = useState(false);
   const { setSelectedCity, setShowSearch } = useTheme();
+  const [debouncedCityNameInput] = useDebounce(cityNameInput, 1000); // Debounce set to 1 second to prevent hammering free API
   const geoUrl =
     hasSearched && cityName
       ? `https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(
@@ -34,6 +36,17 @@ function CitySearch() {
     }
     setDisplayResults(Array.isArray(dataSearch) && dataSearch.length > 0);
   }, [dataSearch, loadingSearch, errorSearch]);
+
+  useEffect(() => {
+    const city = debouncedCityNameInput.trim();
+    if (city) {
+      setErrors({});
+      setCityName(city);
+      setHasSearched(true);
+    } else {
+      setDisplayResults(false);
+    }
+  }, [debouncedCityNameInput]);
 
   function handleSubmit(e) {
     // Use latest handleChange value to search for city
