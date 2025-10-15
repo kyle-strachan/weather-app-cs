@@ -4,6 +4,7 @@ A React-based front-end weather forecast app sourcing data from OpenWeather's 5-
 
 ## Features
 * City search with animated show/hide toggle
+* Implemented auto-search after pause of entry with `use-bounce`, but kept manual option.
 * Dynamic background based on current weather conditions
 * Local storage to resume the last searched location
 * Celsius/Fahrenheit temperature toggle (including metric and imperial wind speed conversion)
